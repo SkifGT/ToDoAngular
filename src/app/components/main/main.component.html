@@ -25,7 +25,8 @@
                 class="btn btn-outline-secondary"
                 type="button"
                 id="button-addon2"
-                >Add task</button>
+                >
+                <fa-icon [icon]="faPlus" size="xl"></fa-icon></button>
             </div>
           </div>
         </div>
@@ -36,6 +37,7 @@
             <app-todo-item></app-todo-item>
             <app-todo-item></app-todo-item>
             <app-todo-item></app-todo-item>
+            <!-- <app-todo-item-edit></app-todo-item-edit> -->
           </div>
         </ul>
       </div>
@@ -47,7 +49,7 @@
         <ul class="list-group content__todos__ul">
           <div class="content__todos__li">
             <app-todo-item></app-todo-item>
-            <app-todo-item></app-todo-item>
+            <app-todo-item-edit></app-todo-item-edit>
             <app-todo-item></app-todo-item>
           </div>
         </ul>

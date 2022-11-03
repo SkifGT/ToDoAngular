@@ -1,0 +1,33 @@
+<li class="form_edit__component list-group-item">
+  <form method="POST"
+  submit={handleEditAndResetForm}
+  >
+    <div class="input-group">
+      <input
+        type="text"
+        class="form-control"
+        id="input-edit-todo-item"
+        name="edit-todo-item"
+        value={itemValue}
+        change={handleItemChange}
+        autoFocus
+      />
+      <button
+        type="submit"
+        id="submit-edit-todo-item"
+        class="btn btn-primary mx-2 rounded-3"
+        disabled={!itemValue}
+        >
+        <fa-icon [icon]="faCheck" size="sm"></fa-icon>
+      </button>
+      <button
+        id="cancel-edit-todo-item"
+        type="button"
+        class="btn btn-danger me-2 rounded-3"
+        click={() => ())}
+        >
+        <fa-icon [icon]="faTimes" size="sm"></fa-icon>
+      </button>
+    </div>
+  </form>
+</li>
