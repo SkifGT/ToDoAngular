@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 import {  faSquare, faCheckSquare } from '@fortawesome/free-solid-svg-icons';
+import { Todo } from 'src/app/model/todo';
 
 
 @Component({
@@ -9,10 +10,14 @@ import {  faSquare, faCheckSquare } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./todo-item.component.scss']
 })
 export class TodoItemComponent implements OnInit {
+  // @Input()
+  // todoList: Todo[] = [];
+  @Input()
+  todo!: Todo;
 
   faSquare = faSquare;
   faCheckSquare = faCheckSquare;
-  
+
   constructor() { }
 
   ngOnInit(): void {
