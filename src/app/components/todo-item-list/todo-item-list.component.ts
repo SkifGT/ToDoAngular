@@ -20,7 +20,7 @@ export class TodoItemListComponent implements OnInit {
   name = '';
 
   @Input()
-  todoList: Todo[] = [];
+  todoList: Todo[] | null = [];
 
 
   constructor(

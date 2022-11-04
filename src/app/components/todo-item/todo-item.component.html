@@ -15,6 +15,10 @@
           <!-- {props.item.value} -->
           {{todo.name}}
         </span>
+        <span (click)="onDelete(todo.id)">
+          <fa-icon [icon]="faTrash" size="xl" ></fa-icon>
+        </span>
+
         <!-- {displayMenu ? <PropertyBar props={props} /> : null} -->
       </div>
     </li>

@@ -16,7 +16,7 @@ export class MainComponent implements OnInit {
   public todoList$ = this._store.select(selectAllTodos);
   faPlus = faPlus;
   name = '';
-
+  
   @Output()
   create = new EventEmitter<string>();
 

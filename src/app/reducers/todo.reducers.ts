@@ -12,7 +12,7 @@ import {
 
 export interface TodoState {
   idIncrement: number;
-  todoList: Todo[];
+  todoList: Todo[] ;
 }
 
 export const initialState: TodoState = {
@@ -26,6 +26,7 @@ export const todoReducer = createReducer(
   // Add the new todo to the todos array
   on(todoCreateAction, (state, { name }) => ({
     ...state,
+    idIncrement: state.idIncrement + 1,
     todoList: [
       ...state.todoList,
       { id: state.idIncrement,
@@ -54,7 +55,7 @@ export const todoReducer = createReducer(
 // Delete todo-item in the todos list
   on(todoDeleteAction, (state, { id }) => ({
     ...state,
-    todoList: state.todoList.filter(todo => todo.id === id)
+    todoList: state.todoList.filter(todo => todo.id !== id)
     })
   ),
 // Load todo list from local storage
