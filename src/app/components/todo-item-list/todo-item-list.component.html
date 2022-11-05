@@ -1,10 +1,13 @@
 <p>todo-item-list works!</p>
 
 <div class="content__todos">
-  <ul class="list-group content__todos__ul">
-    <div class="content__todos__li" *ngFor="let todo of todoList">
+  <ul class="list-group content__todos__ul"  cdkDropList (cdkDropListDropped)="drop($event)"
+  [cdkDropListSortPredicate]="sortPredicate">
+    <div class="content__todos__li" *ngFor="let todo of todoList"  [cdkDragData]="todo"
+    cdkDrag>
       <app-todo-item
       [todo]="todo"
+
       ></app-todo-item>
       <!-- <app-todo-item-edit></app-todo-item-edit> -->
     </div>

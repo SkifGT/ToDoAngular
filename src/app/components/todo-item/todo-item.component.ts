@@ -1,10 +1,10 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
-import {  faSquare, faCheckSquare, faTrash } from '@fortawesome/free-solid-svg-icons';
+import {  faSquare, faCheckSquare, faTrash, faEdit } from '@fortawesome/free-solid-svg-icons';
 import { Store } from '@ngrx/store';
 import { Todo } from 'src/app/model/todo';
 import { AppState } from 'src/app/reducers/app.state';
-import { todoDeleteAction } from 'src/app/reducers/todo.actions';
+import { todoDeleteAction, todoToggleAction } from 'src/app/reducers/todo.actions';
 
 
 @Component({
@@ -19,10 +19,12 @@ export class TodoItemComponent implements OnInit {
 
 
 
-
+  faEdit = faEdit;
   faSquare = faSquare;
   faCheckSquare = faCheckSquare;
   faTrash = faTrash;
+  displayMenu = false;
+
 
   constructor(
     private _store: Store<AppState>,
@@ -31,6 +33,19 @@ export class TodoItemComponent implements OnInit {
   onDelete(id: number) {
     this._store.dispatch(todoDeleteAction({ id }));
   }
+
+  onToggle(id: number) {
+    this._store.dispatch(todoToggleAction({ id }));
+  }
+  onMouseOver(){
+    console.log('mouse over');
+    this.displayMenu = true;
+  }
+
+onMouseLeave(){
+  console.log('mouse leave');
+  this.displayMenu = false;
+}
 
   ngOnInit(): void {
   }

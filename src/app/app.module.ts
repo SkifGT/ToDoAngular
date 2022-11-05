@@ -4,6 +4,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { FormsModule } from '@angular/forms';
+import {DragDropModule} from '@angular/cdk/drag-drop';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
@@ -18,6 +19,7 @@ import { TodoItemComponent } from './components/todo-item/todo-item.component';
 import { TodoItemEditComponent } from './components/todo-item-edit/todo-item-edit.component';
 import { todoReducer } from './reducers/todo.reducers';
 import { TodoItemListComponent } from './components/todo-item-list/todo-item-list.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -35,10 +37,12 @@ import { TodoItemListComponent } from './components/todo-item-list/todo-item-lis
     FormsModule,
     FontAwesomeModule,
     AppRoutingModule,
+    DragDropModule,
     StoreModule.forRoot({ todoList: todoReducer }),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
 
-    EffectsModule.forRoot([])
+    EffectsModule.forRoot([]),
+     BrowserAnimationsModule
   ],
   exports: [
     FormsModule,
