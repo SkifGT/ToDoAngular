@@ -17,14 +17,11 @@ export class TodoItemComponent implements OnInit {
   @Input()
   todo!: Todo;
 
-
-
   faEdit = faEdit;
   faSquare = faSquare;
   faCheckSquare = faCheckSquare;
   faTrash = faTrash;
   displayMenu = false;
-
 
   constructor(
     private _store: Store<AppState>,
@@ -38,14 +35,12 @@ export class TodoItemComponent implements OnInit {
     this._store.dispatch(todoToggleAction({ id }));
   }
   onMouseOver(){
-    console.log('mouse over');
     this.displayMenu = true;
   }
 
-onMouseLeave(){
-  console.log('mouse leave');
-  this.displayMenu = false;
-}
+  onMouseLeave(){
+    this.displayMenu = false;
+  }
 
   ngOnInit(): void {
   }

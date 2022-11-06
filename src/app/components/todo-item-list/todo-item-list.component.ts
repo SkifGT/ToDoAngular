@@ -20,30 +20,23 @@ export class TodoItemListComponent implements OnInit {
   faPlus = faPlus;
   name = '';
 
-
-
   @Input()
   todoList: Todo[] | null = [];
-
 
   constructor(
     private _store: Store<AppState>,
   ) { }
 
-  ngOnChanges(){
-    console.log(this.todoList$);
-  }
-
+  editIds: number[] = [];
 
   drop(event: CdkDragDrop<unknown>) {
-    if (this.todoList && typeof this.todoList === 'object')
+    this.todoList &&
     moveItemInArray(this.todoList, event.previousIndex, event.currentIndex);
   }
 
   sortPredicate(index: number, item: CdkDrag<number>) {
     return (index + 1) % 2 === item.data % 2;
   }
-
 
   ngOnInit(): void {
   }

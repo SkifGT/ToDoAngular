@@ -1,29 +1,26 @@
-<li class="form_item__component list-group-item form-control" (mouseover)="onMouseOver()" (mouseleave)="onMouseLeave()">
-    <!-- onMouseOver={()=> updateDisplayMenu(true)} -->
-    <!-- onMouseLeave = {()=> updateDisplayMenu(false)} -->
-
-      <div
-        class="text-truncate">
-        <!-- onClick={() => dispatch(itemComplition(props))} -->
-
-        <div class="form_item__checkout d-inline-block" (click)="onToggle(todo.id)">
-          <span *ngIf="todo.completed"><fa-icon [icon]="faCheckSquare" size="xl"></fa-icon></span>
-          <span *ngIf="!todo.completed"><fa-icon [icon]="faSquare" size="xl" ></fa-icon></span>
-          <!-- <Chekout completed={props.item.completed}/> -->
-        </div>
-        <span class="form_item__text">
-          <!-- {props.item.value} -->
-          {{todo.name}}
-        </span>
-        <div *ngIf="displayMenu">
-          <span (click)="onDelete(todo.id)">
-            <fa-icon [icon]="faEdit" size="xl" ></fa-icon>
-          </span>
-          <span (click)="onDelete(todo.id)">
-            <fa-icon [icon]="faTrash" size="xl" ></fa-icon>
-          </span>
-        </div>
-        <!-- {displayMenu ? <PropertyBar props={props} /> : null} -->
-      </div>
-    </li>
+<li
+  class="form_item__component list-group-item form-control"
+  (mouseover)="onMouseOver()"
+  (mouseleave)="onMouseLeave()"
+>
+  <div
+    class="text-truncate">
+    <div class="form_item__checkout d-inline-block" (click)="onToggle(todo.id)">
+      <span *ngIf="todo.completed"><fa-icon [icon]="faCheckSquare" size="xl"></fa-icon></span>
+      <span *ngIf="!todo.completed"><fa-icon [icon]="faSquare" size="xl" ></fa-icon></span>
+      <!-- Chekout completed -->
+    </div>
+    <span class="form_item__text">
+      {{todo.name}}
+    </span>
+    <div *ngIf="displayMenu" class="property-bar">
+      <!-- <span (click)="onEdit()">
+        <fa-icon [icon]="faEdit" size="xl" ></fa-icon>
+      </span> -->
+      <span (click)="onDelete(todo.id)">
+        <fa-icon [icon]="faTrash" size="xl" ></fa-icon>
+      </span>
+    </div>
+  </div>
+</li>
 

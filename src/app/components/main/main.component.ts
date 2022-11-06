@@ -6,6 +6,7 @@ import { Store } from '@ngrx/store';
 import { TodoState } from 'src/app/reducers/todo.reducers';
 import { AppState } from '../../reducers/app.state'
 import { Todo } from 'src/app/model/todo';
+import { todoEditAction } from 'src/app/reducers/todo.actions';
 
 @Component({
   selector: 'app-main',
@@ -16,10 +17,9 @@ export class MainComponent implements OnInit {
   public todoList$ = this._store.select(selectAllTodos);
   faPlus = faPlus;
   name = '';
-  
+
   @Output()
   create = new EventEmitter<string>();
-
 
   constructor(
     private _store: Store<AppState>,
@@ -33,5 +33,4 @@ export class MainComponent implements OnInit {
       this.name = '';
     }
   }
-
 }
